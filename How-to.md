@@ -103,3 +103,17 @@ You can convert them to slides and serve them:
 ```bash
 jupyter nbconvert notebook.ipynb --to slides --post serve
 ```
+
+### Reading and loading data
+
+#### Using `numpy`
+
+```python
+numpy.loadtxt('data.csv', delimiter = ',')
+```
+
+#### Using `pandas`
+
+```python
+pandas.read_csv('data.csv')
+```
