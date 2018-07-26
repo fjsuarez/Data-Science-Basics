@@ -39,3 +39,8 @@ Thumbs.db
 # Jupyter Notebook Checkpoint
 
 .ipynb_checkpoints
+
+# Ignore common document types
+
+*.pdf
+*.doc
