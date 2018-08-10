@@ -117,3 +117,75 @@ numpy.loadtxt('data.csv', delimiter = ',')
 ```python
 pandas.read_csv('data.csv')
 ```
+
+Assigning specific columns to variables
+
+```python
+X = data.iloc[:,:-1]
+y = data.iloc[:,-1]
+```
+
+### Linear Regression
+
+#### Simple Linear Regression
+
+```python
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(X, y)
+model.predict(X_test)
+```
+
+#### Polynomial Regression
+
+```python
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+
+poly_feat = PolynomialFeatures(degree = 4)
+X_poly = poly_feat.fit_transform(X)
+poly_model = LinearRegression(fit_intercept = False).fit(X_poly, y)
+model.predict(X_test)
+```
+
+#### Using `pipeline`
+
+```python
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import make_pipeline
+
+poly_model = make_pipeline(PolynomialFeatures(degree=4), LinearRegression())
+poly_model.fit(X, y)
+model.predict(X_test)
+```
+
+### Linearization
+
+#### L1 Linearization (Lasso)
+
+```python
+from sklearn.linear_model import Lasso
+
+lasso_reg = Lasso()
+lasso_reg.fit(X,y)
+reg_coef = lasso_reg.coef_
+```
+
+For L2 linearization, `Ridge` can be used
+
+### Feature Scaling
+
+#### Standard Scale
+
+```python
+from sklearn.linear_model import Lasso
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+
+X_scaled = scaler.fit_transform(X)
+lasso_reg = Lasso()
+lasso_reg.fit(X_scaled, y)
+reg_coef = lasso_reg.coef_
+```
