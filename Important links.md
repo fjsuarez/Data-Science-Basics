@@ -25,3 +25,9 @@
 
 * [Open AI Gym](https://gym.openai.com/)
 * [Alpha Go](https://deepmind.com/blog/alphago-zero-learning-scratch/)
+
+## Practice Exercises
+
+* Learn to plot decision tree boundaries using Contour
+
+* Learn to create Bag of Words (BoW) using [TF-IDF vectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer)
