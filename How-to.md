@@ -125,7 +125,13 @@ X = data.iloc[:,:-1]
 y = data.iloc[:,-1]
 ```
 
-#### Combining `pandas` and `numpy`
+Remove column from dataframe
+
+```python
+data.drop('Header', axis = 1)
+```
+
+Combining `pandas` and `numpy`
 
 ```python
 data = numpy.asarray(pandas.read_csv('data.csv', header=None))
